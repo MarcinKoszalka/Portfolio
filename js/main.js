@@ -50,18 +50,20 @@ function scrollTop(){
 window.addEventListener('scroll', scrollTop)
 
 const contactForm= document.getElementById('contact--form');
-const contactMessege= document.getElementById('contact--messege')
-
+const contactMessege= document.getElementById('contact--messege');
+const textMessege = document.querySelector('.text-messege')
 const sendEmail= (e)=>{
     e.preventDefault()
     emailjs.sendForm('service_dvmlkft', 'template_qltsrnr','#contact--form' ,'OtGETIcumecQs6CkC')
     .then(() =>{
         contactMessege.textContent= 'Messege sent successfully';
         contactMessege.classList.add('green');
+        textMessege.textContent = "Enter your messege..."
 
     }, ()=>{
 contactMessege.textContent= 'Messege not send - service error';
 contactMessege.classList.add('red');
+textMessege.textContent = "Enter your messege..."
     } )
 }
 
