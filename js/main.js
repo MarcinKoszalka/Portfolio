@@ -2,12 +2,12 @@ const navMenu = document.querySelector('.nav__menu');
    const toggleMenu = document.querySelector('.nav__toggle');
     const closeMenu = document.querySelector('.nav__close');
 
-// SHOW
+
 toggleMenu.addEventListener('click', ()=>{
     navMenu.classList.toggle('show')
 })
 
-// HIDDEN
+
 closeMenu.addEventListener('click', ()=>{
     navMenu.classList.remove('show')
 })
@@ -51,19 +51,19 @@ window.addEventListener('scroll', scrollTop)
 
 const contactForm= document.getElementById('contact--form');
 const contactMessege= document.getElementById('contact--messege');
-const textMessege = document.querySelector('.text-messege')
+const textMessege = document.getElementById('text-messege')
 const sendEmail= (e)=>{
     e.preventDefault()
     emailjs.sendForm('service_dvmlkft', 'template_qltsrnr','#contact--form' ,'OtGETIcumecQs6CkC')
     .then(() =>{
         contactMessege.textContent= 'Messege sent successfully';
         contactMessege.classList.add('green');
-        textMessege.textContent = "Enter your messege..."
+        textMessege.textContent = "Enter";
 
     }, ()=>{
 contactMessege.textContent= 'Messege not send - service error';
 contactMessege.classList.add('red');
-textMessege.textContent = "Enter your messege..."
+textMessege.textContent = "";
     } )
 }
 
